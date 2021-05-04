@@ -60,7 +60,6 @@ protobuf {
             }
             task.plugins {
                 scalapb {
-                    option 'java_conversions'
                     option 'grpc'
                 }
                 ziopb{
