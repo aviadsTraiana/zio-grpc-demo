@@ -14,7 +14,8 @@ plugins {
 }
 
 ext {
-    scalapbVersion = '0.10.10'
+    scalapbVersion = '0.11.2'
+    ziopbVersion = '0.5.0'
 }
 
 repositories {
@@ -25,6 +26,7 @@ dependencies {
     // Use Scala 2.12 in our library project
     implementation 'org.scala-lang:scala-library:2.12.8'
     implementation "com.thesamet.scalapb:scalapb-runtime-grpc_2.12:${scalapbVersion}"
+    implementation "com.thesamet.scalapb.zio-grpc:zio-grpc-core_2.12:${ziopbVersion}"
     implementation("dev.zio:zio_2.12:1.0.7")
 
     // Use Scalatest for testing our library
@@ -47,7 +49,7 @@ protobuf {
             artifact = "com.thesamet.scalapb:protoc-gen-scala:${scalapbVersion}:$artifactClassifier"
         }
         ziopb {
-            artifact = "com.thesamet.scalapb.zio-grpc:protoc-gen-zio:0.5.0:$artifactClassifier"
+            artifact = "com.thesamet.scalapb.zio-grpc:protoc-gen-zio:${ziopbVersion}:$artifactClassifier"
         }
     }
 
